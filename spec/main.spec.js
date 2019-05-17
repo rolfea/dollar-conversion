@@ -1,8 +1,8 @@
 const dollarConvert = require('../main.js').dollarConvert;
 
 describe('parse numbers 1 through 9', function() {  
-  xit('converts $1 to "One dollar" (singular)', function() {
-
+  it('converts $1 to "One dollar" (singular)', function() {
+    expect(dollarConvert('$1')).toBe('One dollar');
   });
 
   it('converts $2 to "Two Dollars"', function() {

@@ -1,6 +1,8 @@
 function dollarConvert(dollarString) {
   const num = dollarString.slice(1);
-  return `${getStringCardinal(num)} dollars`;
+  const amt = getStringCardinal(num);
+  const currency = amt != 'One' ? 'dollars' : 'dollar'; 
+  return `${amt} ${currency}`;
 }
 
 function getStringCardinal(number) {
@@ -8,7 +10,15 @@ function getStringCardinal(number) {
 }
 
 const stringCardinals = {
-  '2': 'Two'
+  '1': 'One',
+  '2': 'Two',
+  '3': 'Three',
+  '4': 'Four',
+  '5': 'Five',
+  '6': 'Six',
+  '7': 'Seven',
+  '8': 'Eight',
+  '9': 'Nine',  
 };
 
 module.exports = {
