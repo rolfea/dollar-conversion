@@ -1,0 +1,11 @@
+{
+  "name": "dollar-conversion",
+  "version": "1.0.0",
+  "description": "Converts dollar ($) amounts to their English, string representation",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alex Rolfe",
+  "license": "ISC"
+}
