@@ -1,7 +1,7 @@
 const dollarConvert = require('../main.js').dollarConvert;
 
 describe('parse numbers 1 through 9', function() {  
-  xit('converts $0 to "Zero Dollars"', function() {
+  it('converts $0 to "Zero Dollars"', function() {
     expect(dollarConvert('$0')).toBe('Zero dollars');
   });
     
