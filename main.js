@@ -7,19 +7,13 @@ function dollarConvert(dollarString) {
 
 function getAmount(dollarString) {
   let amt = '';
+  let splitDollarsCents = [];
 
   splitDollarsCents = dollarString.split('.');
   const dollars = stringCardinals[splitDollarsCents[0].slice(1)];
   const cents = splitDollarsCents[1];
-  
-  
-  if (noCents(cents)) {
-    amt = dollars;
-  } else {
-    amt = `${dollars} and ${cents}/100`;
-  }
 
-  return amt;
+  return noCents(cents) ? dollars : `${dollars} and ${cents}/100`;
 }
 
 function noCents(cents) {
