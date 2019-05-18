@@ -1,12 +1,24 @@
 function dollarConvert(dollarString) {
-  const num = dollarString.slice(1);
-  const amt = getStringCardinal(num);
+  const amt = getAmount(dollarString);
   const currency = amt != 'One' ? 'dollars' : 'dollar'; 
+
   return `${amt} ${currency}`;
 }
 
-function getStringCardinal(number) {
-  return stringCardinals[number];
+function getAmount(dollarString) {
+  let amt = '';
+
+  splitDollarsCents = dollarString.split('.');
+  const dollars = stringCardinals[splitDollarsCents[0].slice(1)];
+  const cents = stringCardinals[splitDollarsCents[1]];
+  
+  if (cents === null || cents === undefined) {
+    amt = dollars;
+  } else {
+    amt = `${dollars} and ${cents}`;
+  }
+
+  return amt;
 }
 
 const stringCardinals = {
