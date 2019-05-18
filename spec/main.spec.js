@@ -1,6 +1,6 @@
 const dollarConvert = require('../main.js').dollarConvert;
 
-describe('parse numbers 1 through 9', function() {  
+describe('parse dollar amounts 1 through 9', function() {  
   it('converts $0 to "Zero Dollars"', function() {
     expect(dollarConvert('$0')).toBe('Zero dollars');
   });
@@ -48,28 +48,34 @@ describe('parse cents', function() {
   });
   
   it('converts amounts with no dollars and a base of ten cents', function() {
-    for (let i = 10; i <= 90; i+= 10) {
+    for(let i = 10; i <= 90; i+= 10) {
       expect(dollarConvert(`$0.${i}`)).toBe(`Zero and ${i}/100 dollars`);
     }
   });
 
   it('converts amounts with a base of ten cents"', function() {
-    for (let i = 10; i <= 90; i+= 10) {      
+    for(let i = 10; i <= 90; i+= 10) {      
       expect(dollarConvert(`$2.${i}`)).toBe(`Two and ${i}/100 dollars`);
     }
   });
 
   it('converts amounts with less than ten cents"', function() {
-    for (let i = 1; i <= 9; i++) {     
+    for(let i = 1; i <= 9; i++) {     
       expect(dollarConvert(`$2.0${i}`)).toBe(`Two and 0${i}/100 dollars`);
     }    
   });
 
   it('converts amounts with no dollars and base of less than ten cents', 
     function() {
-      for (let i = 1; i <= 9; i++) {
+      for(let i = 1; i <= 9; i++) {
         expect(dollarConvert(`$0.0${i}`)).toBe(`Zero and 0${i}/100 dollars`);
       }
     }
   );
+
+  it('converts amounts with no dollars and cents from 11-99', function() {
+    for(let i = 11; i <=99; i++) {
+      expect(dollarConvert(`$0.${i}`)).toBe(`Zero and ${i}/100 dollars`);
+    }
+  });
 })
