@@ -13,13 +13,17 @@ function getAmount(dollarString) {
   const cents = splitDollarsCents[1];
   
   
-  if (cents === null || cents === undefined || cents == "00") {
+  if (noCents(cents)) {
     amt = dollars;
   } else {
     amt = `${dollars} and ${cents}/100`;
   }
 
   return amt;
+}
+
+function noCents(cents) {
+  return cents === null || cents === undefined || cents === "00"
 }
 
 const stringCardinals = {
