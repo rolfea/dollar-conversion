@@ -1,15 +1,27 @@
 function dollarConvert(dollarString) {
-  const num = dollarString.slice(1);
-  const amt = getStringCardinal(num);
+  const amt = getAmount(dollarString);
   const currency = amt != 'One' ? 'dollars' : 'dollar'; 
+
   return `${amt} ${currency}`;
 }
 
-function getStringCardinal(number) {
-  return stringCardinals[number];
+function getAmount(dollarString) {
+  let amt = '';
+  let splitDollarsCents = [];
+
+  splitDollarsCents = dollarString.split('.');
+  const dollars = stringCardinals[splitDollarsCents[0].slice(1)];
+  const cents = splitDollarsCents[1];
+
+  return noCents(cents) ? dollars : `${dollars} and ${cents}/100`;
+}
+
+function noCents(cents) {
+  return cents === null || cents === undefined || cents === "00"
 }
 
 const stringCardinals = {
+  '0': 'Zero',
   '1': 'One',
   '2': 'Two',
   '3': 'Three',
@@ -18,7 +30,25 @@ const stringCardinals = {
   '6': 'Six',
   '7': 'Seven',
   '8': 'Eight',
-  '9': 'Nine',  
+  '9': 'Nine',
+  '10': 'Ten',
+  '11': 'Eleven',
+  '12': 'Twelve',
+  '13': 'Thirteen',
+  '14': 'Fourteen',
+  '15': 'Fifteen',
+  '16': 'Sixteen',
+  '17': 'Seventeen',
+  '18': 'Eighteen',
+  '19': 'Nineteen',
+  '20': 'Twenty',
+  '30': 'Thirty',
+  '40': 'Fourty',
+  '50': 'Fifty',
+  '60': 'Sixty',
+  '70': 'Seventy',
+  '80': 'Eighty',
+  '90': 'Ninety',  
 };
 
 module.exports = {
