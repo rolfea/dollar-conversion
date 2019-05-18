@@ -48,7 +48,7 @@ describe('parse cents', function() {
     expect(dollarConvert('$2.00')).toBe('Two dollars');
   });
   
-  xit('converts $2.10 to "Two and 10/100 dollars"', function() {
+  it('converts $2.10 to "Two and 10/100 dollars"', function() {
     expect(dollarConvert('$2.10')).toBe('Two and 10/100 dollars');
   });
 
