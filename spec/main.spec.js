@@ -43,16 +43,33 @@ describe('parse numbers 1 through 9', function() {
 });
 
 describe('parse cents', function() {
-  // TODO - maybe just randomize dollars 0-9
-  it('converts $2.00 to "Two dollars"', function() {
+  it('converts amounts with zero cents"', function() {
     expect(dollarConvert('$2.00')).toBe('Two dollars');
   });
   
-  it('converts $2.10 to "Two and 10/100 dollars"', function() {
-    expect(dollarConvert('$2.10')).toBe('Two and 10/100 dollars');
+  it('converts amounts with no dollars and a base of ten cents', function() {
+    for (let i = 10; i <= 90; i+= 10) {
+      expect(dollarConvert(`$0.${i}`)).toBe(`Zero and ${i}/100 dollars`);
+    }
   });
 
-  xit('converts $0.10 to "Zero and 10/100 dollars"', function() {
-    expect(dollarConvert('$0.10')).toBe('Zero and 10/100 dollars');
+  it('converts amounts with a base of ten cents"', function() {
+    for (let i = 10; i <= 90; i+= 10) {      
+      expect(dollarConvert(`$2.${i}`)).toBe(`Two and ${i}/100 dollars`);
+    }
   });
+
+  it('converts amounts with less than ten cents"', function() {
+    for (let i = 1; i <= 9; i++) {     
+      expect(dollarConvert(`$2.0${i}`)).toBe(`Two and 0${i}/100 dollars`);
+    }    
+  });
+
+  it('converts amounts with no dollars and base of less than ten cents', 
+    function() {
+      for (let i = 1; i <= 9; i++) {
+        expect(dollarConvert(`$0.0${i}`)).toBe(`Zero and 0${i}/100 dollars`);
+      }
+    }
+  );
 })
