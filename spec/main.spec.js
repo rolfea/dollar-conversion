@@ -1,6 +1,6 @@
 const dollarConvert = require('../main.js').dollarConvert;
 
-describe('parse dollar amounts 1 through 9', function() {  
+describe('parses dollar amounts 1 through 9', function() {  
   it('converts $0 to "Zero Dollars"', function() {
     expect(dollarConvert('$0')).toBe('Zero dollars');
   });
@@ -42,7 +42,7 @@ describe('parse dollar amounts 1 through 9', function() {
   });
 });
 
-describe('parse cents', function() {
+describe('parses cents', function() {
   it('converts amounts with zero cents"', function() {
     expect(dollarConvert('$2.00')).toBe('Two dollars');
   });
@@ -79,3 +79,9 @@ describe('parse cents', function() {
     }
   });
 })
+
+describe('parses dollar amounts 21 through 99', function() {
+  it('parses $21 dollars', function() {
+    expect(dollarConvert('$21')).toBe('Twenty one dollars');
+  });
+});

@@ -30,7 +30,7 @@ I think the most logical next steps would be either addressing "tens,"
 
 ### 5/18/2019
 
-#### Cents 
+#### Cents
 
 I'm going to address cents next. I think a simple approach would be to take the
 string subsection after the decimal and append "/100" to it before framing it
@@ -41,6 +41,32 @@ even make configurable if we wanted).
 
 The formatting here is a little weird, but I'm going to use the model of
 **$0.10** should become **Zero and 10/100 dollars**
+
+### 5/19/2019
+
+#### Parsing Remaining Patterns
+
+I've created a dictionary of numbers from 0-20 and all of the powers of 10 up to
+ninety. The next step is to implement parsing numbers that are between those
+powers of 10 and greater than 20 (ie. 21-99). Probably from there the best
+solution for handling all numbers will get hashed out, but I'm trying to keep
+things segmented and organized.
+
+### Must Haves
+
+* ~~Handles Cents~~
+* Handles all amounts up to trillion
+  * 0 - 99
+  * 100 - 1000
+  * 10000 - 100000
+  * 100000 - 1000000
+  * 1mil - 1tril
+* Error Handling
+  * Negative Numbers
+  * More than 100 cents (increase dollar or error?)
+  * Improper Input
+
+### Nice To Haves
 
 #### CI/CD
 
