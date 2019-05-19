@@ -30,6 +30,8 @@ I think the most logical next steps would be either addressing "tens,"
 
 ### 5/18/2019
 
+#### Cents 
+
 I'm going to address cents next. I think a simple approach would be to take the
 string subsection after the decimal and append "/100" to it before framing it
 back into the result string. It isn't addressed in the example from the prompt,
@@ -39,6 +41,12 @@ even make configurable if we wanted).
 
 The formatting here is a little weird, but I'm going to use the model of
 **$0.10** should become **Zero and 10/100 dollars**
+
+#### CI/CD
+
+This is a simple enough project to add CI handling without to much overhead,
+so I might experiment with adding CircleCI or something similar through GitHub.
+This is a *stretch goal*.
 
 ## Tech Used
 
