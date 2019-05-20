@@ -19,8 +19,7 @@ function numToEnglish(strNum) {
       let tens = tensDigits[strNum[0]];      
       let ones = uniqueDigits[strNum[1]];
       
-      return  ones === 'Zero' ? `${tens}` : `${tens} ${ones}`;
-        
+      return  ones === 'Zero' ? `${tens}` : `${tens} ${ones}`;        
   }
 }
 

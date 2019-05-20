@@ -56,13 +56,13 @@ things segmented and organized.
 
 * ~~Handles Cents~~
 * Handles all amounts up to trillion
-  * 0 - 99
+  * ~~0 - 99~~
   * 100 - 1000
   * 10000 - 100000
   * 100000 - 1000000
   * 1mil - 1tril
 * Error Handling
-  * Negative Numbers
+  * ~~Negative Numbers~~
   * More than 100 cents (increase dollar or error?)
   * Improper Input
 
@@ -73,6 +73,15 @@ things segmented and organized.
 This is a simple enough project to add CI handling without to much overhead,
 so I might experiment with adding CircleCI or something similar through GitHub.
 This is a *stretch goal*.
+
+#### Web View
+
+It might be interesting to create a web UI for this as an experiment.
+
+#### NPM
+
+This could be published as a small library to NPM. It would be a good experience
+to get more familiar with that service and all the surrounding infrastructure.
 
 ## Tech Used
 
