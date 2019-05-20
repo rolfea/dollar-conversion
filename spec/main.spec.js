@@ -93,3 +93,51 @@ describe('parses dollar amounts 21 through 99', function() {
     expect(dollarConvert('$30')).toBe('Thirty dollars');
   });
 });
+
+describe('parses dollar amounts 100 through 999', function() {
+  it('parses $100 dollars', function() {
+    expect(dollarConvert('$100')).toBe('One hundred dollars');
+  });
+
+  it('parses $130 dollars', function() {
+    expect(dollarConvert('$130')).toBe('One hundred Thirty dollars');
+  });
+
+  it('parses $999 dollars', function() {
+    expect(dollarConvert('$999')).toBe('Nine hundred Ninety Nine dollars');
+  });
+
+  describe('parses dollar amounts 21 through 99', function() {
+    it('parses $21 dollars', function() {
+      expect(dollarConvert('$21')).toBe('Twenty One dollars');
+    });
+  
+    it('parses $30 dollars', function() {
+      expect(dollarConvert('$30')).toBe('Thirty dollars');
+    });
+  
+    it('parses $999.99 dollars', function() {
+      expect(dollarConvert('$999.99'))
+        .toBe('Nine hundred Ninety Nine and 99/100 dollars');
+    });
+  });
+});
+
+describe('parses dollar amounts 1000 through 9999', function() {
+  it('parses $1000 dollars', function() {
+    expect(dollarConvert('$1000')).toBe('One thousand dollars');
+  });
+
+  it('parses $1010 dollars', function() {
+    expect(dollarConvert('$1010')).toBe('One thousand Ten dollars');
+  });
+
+  it('parses $9999.99 dollars', function() {
+    expect(dollarConvert('$9999.99'))
+      .toBe('Nine thousand Nine hundred Ninety Nine and 99/100 dollars');
+  });
+  it('parses $2523.04', function() {
+    expect(dollarConvert('$2523.04'))
+    .toBe('Two thousand Five hundred Twenty Three and 04/100 dollars');
+  });
+});
