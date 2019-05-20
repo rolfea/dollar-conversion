@@ -89,3 +89,41 @@ describe('converts numbers between 100-999', function() {
     expect(numToEnglish('999')).toBe('Nine hundred Ninety Nine');
   });
 });
+
+describe('converts numbers between 1000-9999', function() {
+  it('converts 1000', function() {
+    expect(numToEnglish('1000')).toBe('One thousand');
+  });
+
+  it('converts 1100', function() {
+    expect(numToEnglish('1100')).toBe('One thousand One hundred');
+  });
+
+  it('converts 1010', function() {
+    expect(numToEnglish('1010')).toBe('One thousand Ten');
+  });
+
+  it('converts 1001', function() {
+    expect(numToEnglish('1001')).toBe('One thousand One');
+  });
+
+  it('converts 1011', function() {
+    expect(numToEnglish('1011')).toBe('One thousand Eleven');
+  });
+
+  it('converts 1111', function() {
+    expect(numToEnglish('1111')).toBe('One thousand One hundred Eleven');
+  });
+
+  it('converts 1234', function() {
+    expect(numToEnglish('1234')).toBe('One thousand Two hundred Thirty Four');
+  });
+
+  it('converts 2399', function() {
+    expect(numToEnglish('2399')).toBe('Two thousand Three hundred Ninety Nine');
+  });
+
+  it('converts 9999', function() {
+    expect(numToEnglish('9999')).toBe('Nine thousand Nine hundred Ninety Nine');
+  });
+});

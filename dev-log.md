@@ -56,12 +56,17 @@ things segmented and organized.
 
 I think I'm pretty close to an "MVP" here. Next is implementing "thousands."
 
+I've implemented up to $9999.99, and I now have to go to work. Some left over
+work is to match the casing and formatting more precisely from the exercise.
+Specifically, the hyphens in 20-99 (presumably) and only capitalizing the first
+char.
+
 ### Must Haves
 
 * ~~Handles Cents~~
 * Handles all amounts up to trillion
   * ~~0 - 99~~
-  * 100 - 1000
+  * ~~100 - 1000~~
   * 10000 - 100000
   * 100000 - 1000000
   * 1mil - 1tril
