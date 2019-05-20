@@ -66,7 +66,7 @@ char.
 * ~~Handles Cents~~
 * Handles all amounts up to trillion
   * ~~0 - 99~~
-  * ~~100 - 1000~~
+  * ~~100 - 9999~~
   * 10000 - 100000
   * 100000 - 1000000
   * 1mil - 1tril
