@@ -52,6 +52,10 @@ powers of 10 and greater than 20 (ie. 21-99). Probably from there the best
 solution for handling all numbers will get hashed out, but I'm trying to keep
 things segmented and organized.
 
+### 5/20/2019
+
+I think I'm pretty close to an "MVP" here. Next is implementing "thousands."
+
 ### Must Haves
 
 * ~~Handles Cents~~

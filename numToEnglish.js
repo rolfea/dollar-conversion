@@ -11,11 +11,34 @@ function numToEnglish(strNum) {
 
   switch (strNum.length) {
     case 2:
-      let tens = tensDigits[strNum[0]];      
-      let ones = uniqueDigits[strNum[1]];
-      
-      return  ones === 'Zero' ? `${tens}` : `${tens} ${ones}`;        
+      return getTwoDigit(strNum);
+    case 3:
+      let result;    
+      let hundreds = uniqueDigits[strNum[0]];
+      let tensOnes = getTwoDigit(strNum.slice(1));
+        
+      if (tensOnes === 'Zero') {
+        result = `${hundreds} hundred`;  
+      } else {
+        result = `${hundreds} hundred ${tensOnes}`;
+      }
+
+      return result;
   }
+}
+
+function getTwoDigit(num) {
+  parsesdNum = Number.parseInt(num);
+  if ([parsesdNum] >= 0 && [parsesdNum] <= 19) {
+    return uniqueDigits[[parsesdNum]];
+  }
+
+  let result;
+  let tens = tensDigits[num[0]];     
+  let ones = uniqueDigits[num[1]];
+  
+  result = ones === 'Zero' ? `${tens}` : `${tens} ${ones}`;
+  return result;
 }
 
 const uniqueDigits = [
