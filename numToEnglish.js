@@ -1,41 +1,66 @@
-function numToEnglish(num) {
+function numToEnglish(strNum) {
   // count number of digits
   // break number into array of groups of <= 3 digits
   // 1 => [1], 21 => [21], 123 => [123], 1234 => [1], [234]
+  const num = Number.parseInt(strNum);
+  
+  // nothing less than 0
+  if (num < 0) {
+    throw "Numbers less than 0 are not valid.";
+  }
 
-  return stringCardinals[num];
+  // handle numbers 0 - 19 directly
+  if (num >= 0 && num <= 19) {
+    return uniqueDigits[strNum];
+  }
+
+  switch (strNum.length) {
+    case 2:
+      let tens = tensDigits[strNum[0]];      
+      let ones = uniqueDigits[strNum[1]];
+      
+      return  ones === 'Zero' ? `${tens}` : `${tens} ${ones}`;
+        
+  }
 }
 
-const stringCardinals = {
-  '0': 'Zero',
-  '1': 'One',
-  '2': 'Two',
-  '3': 'Three',
-  '4': 'Four',
-  '5': 'Five',
-  '6': 'Six',
-  '7': 'Seven',
-  '8': 'Eight',
-  '9': 'Nine',
-  '10': 'Ten',
-  '11': 'Eleven',
-  '12': 'Twelve',
-  '13': 'Thirteen',
-  '14': 'Fourteen',
-  '15': 'Fifteen',
-  '16': 'Sixteen',
-  '17': 'Seventeen',
-  '18': 'Eighteen',
-  '19': 'Nineteen',
-  '20': 'Twenty',
-  '30': 'Thirty',
-  '40': 'Fourty',
-  '50': 'Fifty',
-  '60': 'Sixty',
-  '70': 'Seventy',
-  '80': 'Eighty',
-  '90': 'Ninety',  
-};
+const uniqueDigits = [
+  'Zero',
+  'One',
+  'Two',
+  'Three',
+  'Four',
+  'Five',
+  'Six',
+  'Seven',
+  'Eight',
+  'Nine',
+  'Ten',
+  'Eleven',
+  'Twelve',
+  'Thirteen',
+  'Fourteen',
+  'Fifteen',
+  'Sixteen',
+  'Seventeen',
+  'Eighteen',
+  'Nineteen',
+];
+  
+const tensDigits = [
+  '',
+  'Ten',
+  'Twenty',
+  'Thirty',
+  'Fourty',
+  'Fifty',
+  'Sixty',
+  'Seventy',
+  'Eighty',
+  'Ninety',  
+];
+  
+
 
 module.exports = {
   numToEnglish: numToEnglish,
