@@ -38,4 +38,8 @@ describe('converts numbers between 20 - 99', function() {
     expect(numToEnglish('52')).toBe('Fifty Two');
   });
 
+  it('converts 99', function() {
+    expect(numToEnglish('99')).toBe('Ninety Nine');
+  });
+
 });
