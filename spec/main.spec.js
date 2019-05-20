@@ -80,8 +80,16 @@ describe('parses cents', function() {
   });
 })
 
-xdescribe('parses dollar amounts 21 through 99', function() {
+describe('parses dollar amounts 21 through 99', function() {
   it('parses $21 dollars', function() {
-    expect(dollarConvert('$21')).toBe('Twenty one dollars');
+    expect(dollarConvert('$21')).toBe('Twenty One dollars');
+  });
+
+  it('parses $30 dollars', function() {
+    expect(dollarConvert('$30')).toBe('Thirty dollars');
+  });
+
+  it('parses $99 dollars', function() {
+    expect(dollarConvert('$30')).toBe('Thirty dollars');
   });
 });

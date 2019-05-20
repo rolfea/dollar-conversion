@@ -22,7 +22,6 @@ function getDollars(dollarAmt) {
   return numToEnglish(dollarAmt);
 }
 
-
 function noCents(cents) {
   return cents === null || cents === undefined || cents === "00"
 }
